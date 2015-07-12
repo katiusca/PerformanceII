@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../css/main-desktop.css">
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+    <title>Data de España</title>
+</head>
+    <body>
+        <header class="page-header">
+            <h1 class="title"><a href="/home">Municipios de España</a></h1>
+            <h4 class="calculadora"><a href="/calculadora-provincia">Calculadora de Códigos Postales</a></h4>
+        </header>
+        <main class="container">
+            <div class="row">
+                <article class="col-xs-8">
+                    <h2>Provincia {{ data.provincia|title   }}</h2>
+                </article>
+            </div>
+            <div id="contenido">
+                <ul>
+                    {% for municipio in data.municipios %}
+                        <li>
+                            {{ municipio.municipio }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% set anterior = (data.page-1) %}
+            <ul class="pager">
+                {% if anterior > 0 %}
+                    <li><a href="/municipios/{{ data.provincia }}/page{{ anterior }}">Anterior</a></li>
+                {% endif %}
+                {% if data.existe %}
+                    <li><a href="/municipios/{{ data.provincia }}/page{{ data.page }}">Siguiente</a></li>
+                {% endif %}
+            </ul>
+        </main>
+    </body>
+</html>

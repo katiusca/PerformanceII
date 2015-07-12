@@ -1,0 +1,6 @@
+{
+  "home": {"controller" : "Controller\\DataEspaña\\ControllerHome", "action": "index"},
+  "municipios": {"controller" : "Controller\\DataEspaña\\ControllerMunicipios", "action": "listMunicipiosPorProvincia"},
+  "calculadora-provincia": {"controller" : "Controller\\DataEspaña\\ControllerCalculadora", "action": "buscar"},
+  "buscar-municipio": {"controller" : "Controller\\DataEspaña\\ControllerAjaxMunicipios", "action": "getMunicipiosByTruncatedName"}
+}

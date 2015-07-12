@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/main-desktop.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <title>Data de España</title>
+</head>
+    <body>
+        <header class="page-header">
+            <h1 class="title"><a href="/home">Municipios de España</a></h1>
+        </header>
+        <main class="container">
+            <div class="row">
+                <article class="col-xs-8">
+                    <form id="form-calculadora" method="post">
+                        <h3>Introduzca el código postal</h3>
+                        Código :   <input type="text" id="codigoProvincia" size="5" />
+                                    <input  type="submit" onclick="enviar()" value="Buscar"/>
+                    </form>
+                    <h2>{{ data.provincia }}</h2>
+                </article>
+            </div>
+        </main>
+        <script src="../../js/search.js"></script>
+    </body>
+</html>

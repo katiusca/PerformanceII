@@ -1,0 +1,25 @@
+{
+  "name":"katiusca/fwk-standard-edition",
+  "description":"MPWAR Framework",
+  "license":"Apache-2.0",
+  "keywords": [],
+  "homepage":"https://github.com/katiusca/fwperformance",
+  "type":"project",
+  "repositories": [
+    {
+      "type":"vcs",
+      "url":"https://github.com/katiusca/fwperformance"
+    }
+  ],
+  "require": {
+    "php":">=5.5.2",
+    "katiusca/fwperformance":"dev-devel"
+  },
+
+  "minimum-stability":"dev",
+  "autoload": {
+    "psr-4": {
+      "":"src/"
+    }
+  }
+}

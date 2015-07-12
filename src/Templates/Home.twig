@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../css/main-desktop.css">
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../css/autocomplete-0.3.0.min.css">
+    <title>Data de España</title>
+</head>
+    <body>
+        <header class="page-header">
+            <h1 class="title"><a href="/home">Municipios de España</a></h1>
+            <h4 class="calculadora"><a href="/calculadora-provincia">Calculadora de Códigos Postales</a></h4>
+
+        </header>
+        <main class="container-fluid">
+            <div class="row">
+                <section class="col-xs-3">
+                    <h3>Lista de Provincias</h3>
+                    <ul>
+                        {% for prov in data.provincias %}
+                           <li class="list"><a href="/municipios/{{ prov.provincia_normalizada }}">{{ prov.provincia }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </section>
+                <article class="col-xs-7">
+                    <h2>Top Provincias</h2>
+                    {% for prov, value in data.top6Provincias %}
+                        <div class="top6">
+                            <div class="position-imagen">{{ loop.index }}</div>
+                            <a href="/municipios/{{ prov }}" class="link">
+                                <img src="../imagen/{{ prov }}.jpg" width="230px" height="230px">
+                            </a>
+                            <h5 >{{ value.nombre|upper }} <label class="title-imagen">({{ value.visitas }} visitas)</label></h5>
+                            <p>
+                                Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas.Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me
+                            </p>
+                        </div>
+                    {% endfor %}
+                </article>
+                <section class="col-xs-2">
+                    <h3>Top 10 código postal</h3>
+                    <table class="table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Cant/Buscado</th>
+                        </tr>
+                        </thead>
+                        {% for cp, value in data.top10CP %}
+                            <tr>
+                                <td>{{ cp }}</td>
+                                <td>{{ value }}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                    <h4 class="title-buscador">Buscador de municipios</h4>
+                    <div id="search_bar" style="margin-top: 10px;">
+                    </div>
+                </section>
+            </div>
+        </main>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="http://autocompletejs.com/releases/0.3.0/autocomplete-0.3.0.js"></script>
+        <script src="../../js/search.js"></script>
+    </body>
+</html>

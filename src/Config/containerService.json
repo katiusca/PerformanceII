@@ -1,0 +1,15 @@
+{
+
+  "provinciasService": {
+    "class": "Services\\ProvinciasService"
+  },
+
+  "municipiosService": {
+    "class": "Services\\MunicipiosService"
+  },
+
+  "topService": {
+    "class": "Services\\TopService"
+  }
+
+}
